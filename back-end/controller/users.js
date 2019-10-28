@@ -1,6 +1,6 @@
 const usersModel=require('../models/users')
 const tools=require('../utils/tools')
-
+const authMiddlewares=require('../middlewares/auth')
 const signup = async function(req, res, next) {
     res.set('Content-Type', 'application/json; charset=utf-8')
    let {username,password}=req.body
@@ -66,19 +66,8 @@ const signin=async function(req,res,next){
         })
     }
 }
+const issignin=authMiddlewares
 
-const issignin=async function(req,res,next){
-    res.set('Content-Type', 'application/json; charset=utf-8')
-    if(req.session.username)
-    res.render('succ',{
-        data:JSON.stringify({username:req.session.username})
-    })
-    else {
-        res.render('fail',{
-            data:JSON.stringify({message:'未登录，无权限'})
-        })
-    }
-}
 const signout=function(req,res,next){
     req.session=null
     res.set('Content-Type', 'application/json; charset=utf-8')

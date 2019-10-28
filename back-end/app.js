@@ -9,6 +9,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var positionRouter = require('./routes/position');
 
+var authMiddlewares= require('./middlewares/auth')
 var app = express();
 
 app.engine('art', require('express-art-template'));
@@ -32,7 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/api/users', usersRouter);
-app.use('/api/position', positionRouter);
+app.use('/api/position',authMiddlewares,positionRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
