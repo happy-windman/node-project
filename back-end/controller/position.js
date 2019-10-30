@@ -37,6 +37,7 @@ const position_add = async (req, res, next) => {
     res.set('Content-Type', 'application/json; charset=utf-8')
     let data = req.body
     data.currentTime = moment().format('YYYY-MM-DD HH:mm:ss')
+    data.companyLogo = req.filename
     console.log(data)
     // let { positionName, companyName, city, experience, education, salary, currentTime } = req.body
     let result = await positionsModel.save(data)

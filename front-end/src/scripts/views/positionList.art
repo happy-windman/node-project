@@ -53,7 +53,7 @@
                                   <div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
                           </td>
                           <td>{{$index + 1}}</td>
-                          <td><img ng-src="https://img01.tianjihr.com/o_1dcvne539crtube1fe1f2s1l1jg.jpg" src="https://img01.tianjihr.com/o_1dcvne539crtube1fe1f2s1l1jg.jpg"></td>
+                          <td><img src='http://localhost:3000/uploads/{{$value.companyLogo}}'></td>
                           <td>{{$value.positionName}}</td>
                           <td>{{$value.companyName}}</td>
                           <td>{{$value.city}}</td>

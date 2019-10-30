@@ -9,6 +9,7 @@ const Users=mongoose.model('users',{
     password:String,
 })
 const Positions=mongoose.model('positions',{
+  companyLogo:String,
   positionName:String,
   companyName:String,
   city:String,

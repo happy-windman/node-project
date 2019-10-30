@@ -32,6 +32,8 @@
     "sme-router": "^0.12.8",
     "store": "^2.0.12",
     "string-loader": "0.0.1",
-    "style-loader": "^1.0.0"
+    "style-loader": "^1.0.0",
+    "timeago": "^1.6.7",
+    "timeago.js": "^4.0.1"
   }
 }

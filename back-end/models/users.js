@@ -9,9 +9,14 @@ const findOne=(conditions)=>{
     return Users.findOne(conditions)
 }
 
+const update= async (conditions,data) =>{
+    console.log(conditions,data)
+    return await Users.findOneAndUpdate(conditions,data)
+}
 
 module.exports = {
     save,
-    findOne
+    findOne,
+    update
 }
 
