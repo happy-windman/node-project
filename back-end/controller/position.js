@@ -89,6 +89,7 @@ const position_delete = async (req, res, next) => {
 }
 
 const position_search = async (req,res,next) =>{
+    res.set('Content-Type', 'application/json; charset=utf-8')
     let {keyword} = req.body
     let result = await positionsModel.search(keyword)
     if (result) {

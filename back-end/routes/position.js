@@ -13,10 +13,11 @@ const uploadMiddleware = require('../middlewares/upload')
 router.route('/')
  .get(position.findAll)
  .post(uploadMiddleware,position.position_add)
+ 
  .patch(position.position_update)
  .delete(position.position_delete)
 
  router.get('/findOne',position.findOne);
-
+ router.post('/position_search',position.position_search)
 //  router.post('/position_email',position_email)
 module.exports = router;
