@@ -1,3 +1,5 @@
+import store from 'store'
+
 export default{
     get({
         url,
@@ -5,14 +7,47 @@ export default{
         data={},
         
     }){
+        let token = store.get('token')
     return $.ajax({
             url,
             type,
             data,
-            success:(result)=>{
+            headers:{
+               'X-Access-Token':token
+            },
+            success:(result,textStatus,jqXHR)=>{
+                let token = jqXHR.getResponseHeader('x-access-token')
+                if(token)
+                {
+                  store.set('token',token)  
+                }
                 return result
             }
         })
-    } 
+    },
+
+    update({
+        url,
+        type='POST',
+        data={},
+    }){
+        let token = store.get('token')
+        return $.ajax({
+            url,
+            type,
+            data,
+            headers:{
+                'X-Access-Token':token
+             },
+            success:(result,textStatus,jqXHR)=>{
+                let token = jqXHR.getResponseHeader('x-access-token')
+                if(token)
+                {
+                  store.set('token',token)  
+                }
+                return result
+            }
+        })
+    }
 }
 

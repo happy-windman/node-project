@@ -40,10 +40,9 @@ class Login {
         {
             location.hash='/home'
             location.reload()
-         
         }
       
        
-            alert(result.data.message)
+     alert(result.data.message)
     }
 }

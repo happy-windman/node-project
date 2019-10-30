@@ -1,0 +1,91 @@
+
+<div class="layui-fluid">
+    <div class="layui-row">
+        <form class="layui-form" id='add-form' onSubmit="return false;">
+                <div class="layui-form-item">
+                    <label class="layui-form-label" style='width:100px;'>
+                    <h1>添加招聘</h1>
+                    </label>
+                </div>
+            <div class="layui-form-item">
+                <label for="companyLogo" class="layui-form-label">
+                    <span class="x-red">*</span>公司Logo
+                </label>
+                <div class="layui-input-inline">
+                    <input type="file" id="companyLogo" name="companyLogo" required="" lay-verify="required"
+                        autocomplete="off" class="layui-input">
+                </div>
+              
+            </div>
+            <div class="layui-form-item">
+                <label for="positionName" class="layui-form-label">
+                    <span class="x-red">*</span>职业
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="positionName" name="positionName" required="" lay-verify="required"
+                        autocomplete="off" class="layui-input">
+                </div>
+              
+            </div>
+            <div class="layui-form-item">
+                <label for="companyName" class="layui-form-label">
+                    <span class="x-red">*</span>公司名
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="companyName" name="companyName" required="" lay-verify="phone" autocomplete="off"
+                        class="layui-input">
+                </div>
+              
+            </div>
+            <div class="layui-form-item">
+                <label for="city" class="layui-form-label">
+                    <span class="x-red">*</span>工作地点
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="city" name="city" required="" lay-verify="email" autocomplete="off"
+                        class="layui-input">
+                </div>
+               
+            </div>
+  
+            <div class="layui-form-item">
+                <label for="experience" class="layui-form-label">
+                    <span class="x-red">*</span>经验
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="experience" name="experience" required="" lay-verify="pass" autocomplete="off"
+                        class="layui-input">
+                </div>
+                <div class="layui-form-mid layui-word-aux">
+                    6到16个字符
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="education" class="layui-form-label">
+                    <span class="x-red">*</span>学历
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="education" name="education" required="" lay-verify="repass"
+                        autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="salary" class="layui-form-label">
+                    <span class="x-red">*</span>薪水
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="salary" name="salary" required="" lay-verify="repass"
+                        autocomplete="off" class="layui-input">
+                </div>
+            </div>
+ 
+            <div class="layui-form-item">
+                <label for="L_repass" class="layui-form-label">
+                </label>
+               <!-- <input type="button" class="layui-btn" id='addSubmit' value=""> -->
+                    <button class="layui-btn" id='addSubmit' type="button">增加</button>
+              
+            </div>
+        </form>
+    </div>
+</div>

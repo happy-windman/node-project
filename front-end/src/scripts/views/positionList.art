@@ -1,13 +1,100 @@
-<div>
+  <br>
+  <div class="x-nav">
 
-    <p>aaa</p>
-    <p>aaa</p>
-    <p>aaa</p>
-    <p>aaa</p>
-    <p>aaa</p>
-    <p>aaa</p>
-    <p>aaa</p>
-    <p>aaa</p>
-    <p>aaa</p>
-    <p>aaa</p>   
+  <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" onclick="location.reload()" title="刷新">
+    <i class="layui-icon layui-icon-refresh" style="line-height:30px"></i></a>
 </div>
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-body ">
+                    <form class="layui-form layui-col-space5">
+                        <!-- <div class="layui-inline layui-show-xs-block">
+                            <input class="layui-input"  autocomplete="off" placeholder="开始日" name="start" id="start">
+                        </div>
+                        <div class="layui-inline layui-show-xs-block">
+                            <input class="layui-input"  autocomplete="off" placeholder="截止日" name="end" id="end">
+                        </div> -->
+                        <div class="layui-inline layui-show-xs-block">
+                            <input type="text" name="keyword"  placeholder="请输入用户名" autocomplete="off" class="layui-input" id='search'> 
+                        </div>
+                        <div class="layui-inline layui-show-xs-block">
+                            <button class="layui-btn" id='search-btn' lay-submit="" lay-filter="search" type="button"><i class="layui-icon">&#xe615;</i></button>
+                        </div>
+                    </form>
+                </div>
+                <div class="layui-card-header">
+                    <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
+                    <button class="layui-btn" id='add-data'><i class="layui-icon"></i>添加</button>
+                </div>
+                <div class="layui-card-body ">
+                    <table class="layui-table layui-form">
+                      <thead>
+                        <tr>
+                          <th>
+                                  <div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+                          </th>
+                          <th id='id'>ID</th>
+                          <th id='companyLogo'>公司logo</th>
+                          <th id='positionName'>职业名字</th>
+                          <th id='companyName'>公司</th>
+                          <th id='city'>地点</th>
+                          <th id='experience'>经验</th>
+                          <th id='education'>学历</th>
+                          <th id='salary'>薪水</th>
+                          <th id='currentTime'>时间</th>
+                          <th >管理</th>
+                      </thead>
+                      <tbody>
+                        {{each list}}
+                        <tr>
+                          <td>
+                                  <div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon layui-icon-ok"></i></div>
+                          </td>
+                          <td>{{$index + 1}}</td>
+                          <td><img ng-src="https://img01.tianjihr.com/o_1dcvne539crtube1fe1f2s1l1jg.jpg" src="https://img01.tianjihr.com/o_1dcvne539crtube1fe1f2s1l1jg.jpg"></td>
+                          <td>{{$value.positionName}}</td>
+                          <td>{{$value.companyName}}</td>
+                          <td>{{$value.city}}</td>
+                          <td>{{$value.experience}}</td>
+                          <td>{{$value.education}}</td>
+                          <td>{{$value.salary}}</td>
+                          <td >{{$value.currentTime}}</td>
+                          <td class="td-manage">
+                            <a href="javascript:;"  title="启用">
+                              <i class="layui-icon">&#xe601;</i>
+                            </a>
+                            <a title="编辑" class='update-btn' data-id='{{$value._id}}' href="javascript:;">
+                              <i class="layui-icon">&#xe642;</i>
+                            </a>
+                            <a title="删除" class='delete-btn'  data-id='{{$value._id}}' href="javascript:;">
+                              <i class="layui-icon">&#xe640;</i>
+                            </a>
+                          </td>
+                        </tr>
+                        {{/each}}
+                      </tbody>
+                    </table>
+                </div>
+                <div class="layui-card-body ">
+                    <div class="page">
+                        <div>
+                          <a class="prev" href="">&lt;&lt;</a>
+                          <a class="num" href="">1</a>
+                          <span class="current">2</span>
+                          <a class="num" href="">3</a>
+                          <a class="num" href="">489</a>
+                          <a class="next" href="">&gt;&gt;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="layui-layer layui-layer-iframe" id="layui-layer1"  times="1" showtime="0" contype="string"
+    style="z-index: 19891015; width: 600px; min-height: 400px; top: 50%; left: 50%; position: absolute;margin-left: -300px;margin-top: -100px; display: none;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="tab_show"></div>

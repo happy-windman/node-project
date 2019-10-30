@@ -1,0 +1,10 @@
+
+    <li class="home">
+        <i class="layui-icon">&#xe68e;</i>管理系统
+    </li>
+    <li class="home">
+        <i class="layui-icon"></i>{{breadcrumb.level1}}
+    </li>
+    <li class="home layui-this" >
+        <i class="layui-icon"></i>{{breadcrumb.level2}}
+    </li>

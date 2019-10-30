@@ -1,16 +1,17 @@
 import layoutView from '../views/layout.art'
 import httpModel from '../models/http'
+import store from 'store'
 
 class index{
     constructor(){
         this.render()
     }
-    render(){
+    async render(){
         console.log(11)
         let html=layoutView({})
         $('#root').html(html)
 
-        this.issignin()
+       await this.issignin()
         $('.top-admin dl dd').eq(2).on('click',this.signout)
     }
 
@@ -20,7 +21,7 @@ class index{
             type:'GET'
         })
         console.log(result)
-        if(result.data.username)
+        if(result.ret)
         {
             $('.top-admin').show()
             $('.top-login').hide()
@@ -35,12 +36,7 @@ class index{
     }
 
     async signout(){
-        console.log(111)
-        let result=await httpModel.get({
-            url:'/api/users/signout',
-            type:'GET'
-        })
-       
+       store.remove('token')
         location.reload()
     }
 }
