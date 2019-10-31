@@ -68,7 +68,7 @@
                             <a title="编辑" class='update-btn' data-id='{{$value._id}}' href="javascript:;">
                               <i class="layui-icon">&#xe642;</i>
                             </a>
-                            <a title="删除" class='delete-btn'  data-id='{{$value._id}}' href="javascript:;">
+                            <a title="删除" class='delete-btn'  data-id='{{$value._id}}' data-companyLogo="{{$value.companyLogo}}" href="javascript:;">
                               <i class="layui-icon">&#xe640;</i>
                             </a>
                           </td>
@@ -78,16 +78,24 @@
                     </table>
                 </div>
                 <div class="layui-card-body ">
+                  {{if list.length==0}}
+                  <div class="page">暂无数据</div>
+                  {{else}}
                     <div class="page">
                         <div>
-                          <a class="prev" href="">&lt;&lt;</a>
-                          <a class="num" href="">1</a>
-                          <span class="current">2</span>
-                          <a class="num" href="">3</a>
-                          <a class="num" href="">489</a>
-                          <a class="next" href="">&gt;&gt;</a>
+                          <a class="prev"href="javascript:void(0)">&lt;&lt;</a>
+                      {{each pageCount}}
+                          {{if currentPage==$value}}
+                          <span class="current">{{$value}}</span>
+                          {{else}}
+                          <a class="num" href="javascript:void(0)">{{$value}}</a>
+                          {{/if}}
+                      {{/each}}
+                       
+                          <a class="next" href="javascript:void(0)">&gt;&gt;</a>
                         </div>
                     </div>
+                    {{/if}}
                 </div>
 
                 <div class="layui-layer layui-layer-iframe" id="layui-layer1"  times="1" showtime="0" contype="string"

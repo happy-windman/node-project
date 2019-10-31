@@ -2,20 +2,22 @@
 
 
 
-<div class="layui-fluid">
+<div class="layui-fluid" >
         <div class="layui-row">
-            <form class="layui-form" id='update-form' onSubmit="return false;">
+            <form class="layui-form" id='update-form'  style="position: relative;">
+
                     <div class="layui-form-item">
                         <label class="layui-form-label" style='width:100px;'>
                         <h1>修改数据</h1>
                         </label>
                     </div>
                 <div class="layui-form-item">
+                    <div style="position: absolute; right: 30px; top:30px;text-align: center;"><img src='http://localhost:3000/uploads/{{data.companyLogo}}'><p>当前</p></div>
                     <label for="companyLogo" class="layui-form-label">
                         <span class="x-red">*</span>公司Logo
                     </label>
                     <div class="layui-input-inline">
-                        <input type="file" id="companyLogo" name="companyLogo" required="" lay-verify="required"
+                        <input type="file" id="companyLogo" name="companyLogo"  lay-verify="required"
                             autocomplete="off" class="layui-input">
                     </div>
                   
@@ -81,13 +83,14 @@
                             autocomplete="off" class="layui-input">
                     </div>
                 </div>
-        
+                <input type="hidden" name='id' value="{{data._id}}">
+                <input type="hidden" name='tempCompanyLogo' value="{{data.companyLogo}}">
                 <div class="layui-form-item">
                     <label for="L_repass" class="layui-form-label">
                     </label>
                    <!-- <input type="button" class="layui-btn" id='addSubmit' value=""> -->
-                        <button class="layui-btn" id='updateSubmit' type="button">修改</button>
-                  
+                        <button class="layui-btn" id='updateSubmit' type="submit">修改</button>
+                        <span class="layui-btn" id='back-btn' >取消</span>
                 </div>
             </form>
         </div>

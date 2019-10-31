@@ -1,6 +1,7 @@
 var multer  = require('multer')
 var path = require('path')
 var randomstring = require('randomstring')
+var fs = require('fs')
 // var upload = multer({ 
 //     dest: path.resolve(__dirname,'../public/uploads')
 // })
@@ -27,8 +28,19 @@ var storage = multer.diskStorage({
 
   var upload = multer({storage:storage}).single('companyLogo')
 module.exports = (req,res,next) =>{
+ 
     upload(req, res, function (err) {
-      req.filename = filename
+      console.log(req.body)
+      if(filename){
+            fs.unlink(path.resolve(__dirname,'../public/uploads/'+req.body.tempCompanyLogo),(err) => {
+              if (err) {
+                console.log(err.message)
+              }
+            }
+            )
+      }
+      req.filename = filename   
+      filename=''     
       next() 
       })
 }

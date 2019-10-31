@@ -83,6 +83,7 @@
                 </label>
                 <!-- <input type="button" class="layui-btn" id='addSubmit' value=""> -->
                 <button class="layui-btn" id='addSubmit' type="submit">增加</button>
+                <span class="layui-btn" id='back-btn' >取消</span>
 
             </div>
         </form>

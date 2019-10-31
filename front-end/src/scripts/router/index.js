@@ -13,7 +13,7 @@ import titleView from '../views/title.art'
 const router=new SMERouter('content')
 
 router.use((req)=>{
-let url = req.url.substr(1).split('?')[0]
+let url = req.url.substr(1).split('?')[0].split('_')[0]
 console.log(url,111)
 
 for(let i=0;i<$(`#nav a`).length;i++)
@@ -73,6 +73,7 @@ router.route('/register',register)
 router.route('/findpassword',findPassword)
 router.route('/home',home)
 router.route('/position/list',position.list)
+router.route('/position/list_:page',position.list)
 
 // router.route('*',(req,res,next)=>{
 //     res.redirect('/login');

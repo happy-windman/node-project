@@ -3,7 +3,7 @@ const issignin=async function(req,res,next){
     res.set('Content-Type', 'application/json; charset=utf-8')
     let token=req.get('X-Access-Token')
     let decoded=await tools.verifyToken(token)
-    console.log(decoded)
+  
     if(token)
     {
         if(req.path=='/issignin')
