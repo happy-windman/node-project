@@ -7,7 +7,7 @@ class index{
         this.render()
     }
     async render(){
-        console.log(11)
+    
         let html=layoutView({})
         $('#root').html(html)
 
@@ -20,7 +20,7 @@ class index{
             url:'/api/users/issignin',
             type:'GET'
         })
-        console.log(result)
+ 
         if(result.ret)
         {
             $('.top-admin').show()

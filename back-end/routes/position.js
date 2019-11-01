@@ -17,6 +17,7 @@ router.route('/')
  .patch(uploadMiddleware,position.position_update)
  .delete(position.position_delete)
 
+
  router.get('/findOne',position.findOne);
  router.post('/position_search',position.position_search)
 module.exports = router;

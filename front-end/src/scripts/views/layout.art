@@ -106,7 +106,7 @@
                           <i class="iconfont nav_right">&#xe697;</i></a>
                       <ul class="sub-menu">
                           <li>
-                              <a href="#/position/list" data-url="position/list">
+                              <a href="#/position/list_1" data-url="position/list_1">
                                   <i class="iconfont">&#xe6a7;</i>
                                   <cite>数据列表</cite></a>
                           </li>
