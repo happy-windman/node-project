@@ -88,15 +88,43 @@ class List {
             that.handleDelete(req, res, next, this)
         })
         $('#search-btn').on('click', this.handSearch.bind(this, req, res, next))
-        $('.num').on('click', function () {
-            that.handlePageNumberClick(req, res, next, this)
-        })
-        $('.prev').on('click', function () {
-            that.handlePageNumberClick(req, res, next, this, 'prev')
-        })
-        $('.next').on('click', function () {
-            that.handlePageNumberClick(req, res, next, this, 'next')
-        })
+        // $('.num').on('click', function () {
+        //     that.handlePageNumberClick(req, res, next, this)
+        // })
+        // $('.prev').on('click', function () {
+        //     that.handlePageNumberClick(req, res, next, this, 'prev')
+        // })
+        // $('.next').on('click', function () {
+        //     that.handlePageNumberClick(req, res, next, this, 'next')
+        // })
+        $.fn.zPager.defaults = {
+    
+            pageCount: 6, //总页数
+            current: 1, //当前页码数
+            pageStep: 8, //当前可见最多页码个数
+            minPage: 5, //最小页码数，页码小于此数值则不显示上下分页按钮
+            active: 'current', //当前页码样式
+            prevBtn: 'pg-prev', //上一页按钮
+            nextBtn: 'pg-next', //下一页按钮
+            btnBool: true, //是否显示上一页下一页
+            firstBtn: 'pg-first', //第一页按钮
+            lastBtn: 'pg-last', //最后一页按钮
+            btnShow: true, //是否显示第一页和最后一页按钮
+            disabled: true, //按钮失效样式
+        
+        }
+        $("#z-pager").zPager({
+            pageCount: 6, //总页数
+            current: 3, //当前页码数
+            pageStep: 8, //当前可见最多页码个数
+            minPage: 5, 
+        
+            btnShow: true,
+           
+            dataRender: function(data) {
+                console.log(data );
+            },
+        });
     }
 
     async init_search() {
@@ -223,6 +251,7 @@ console.log(req.params.page,22222)
         }
         else res.go(this.listRouter + ~~$(obj).text())
     }
+
 
 
 }

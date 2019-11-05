@@ -77,8 +77,8 @@
                       </tbody>
                     </table>
                 </div>
-                <div class="layui-card-body ">
-                  {{if list.length==0}}
+                <div class="layui-card-body " id="z-pager">
+                  <!-- {{if list.length==0}}
                   <div class="page">暂无数据</div>
                   {{else}}
                     <div class="page">
@@ -95,7 +95,7 @@
                           <a class="next" href="javascript:void(0)">&gt;&gt;</a>
                         </div>
                     </div>
-                    {{/if}}
+                    {{/if}} -->
                 </div>
 
                 <div class="layui-layer layui-layer-iframe" id="layui-layer1"  times="1" showtime="0" contype="string"
